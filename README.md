@@ -89,8 +89,8 @@ Upload a PDF or DOCX resume, select a target role, and get an **ATS score, match
 Clone the repository:
 
 ```bash
-git clone https://github.com/neha-7218/ai-job-assistant-clean.git
-cd ai-job-assistant-clean
+git clone https://github.com/neha-7218/ai-job-assistant.git
+cd ai-job-assistant
 ```
 
 Create and activate a virtual environment:
@@ -147,7 +147,7 @@ https://ai-job-assistant-akpt.onrender.com/
 ## Project Structure
 
 ```text
-ai-job-assistant-clean/
+ai-job-assistant/
 ├── app/
 │   ├── main.py
 │   ├── analyzer.py
@@ -178,7 +178,7 @@ Building this project gave me hands-on experience with:
 * SQLite database operations
 * PDF report generation
 * Docker-based deployment
-* Debugging and deploying a production web application
+* Debugging and deploying a live web application
 
 ## Notes
 

@@ -1,32 +1,33 @@
 # AI Job Assistant
 
-AI Job Assistant is a web app I built to help students and junior developers understand how well their resume matches a job role.
+An AI-powered web application that helps students and junior developers evaluate their resumes against a target job role and prepare for interviews.
 
-You can upload a PDF or DOCX resume, select a target role, and get an ATS score, skills you already have, skill gaps, project ideas, and mock interview questions based on that role.
+Upload a PDF or DOCX resume, select a target role, and get an **ATS score, matched skills, skill gaps, portfolio project ideas, and mock interview questions**.
 
-**Author:** Neha Arabati
-**GitHub:** [github.com/neha-7218](https://github.com/neha-7218)
+### 🚀 Live Demo
 
-## What it does
+[Try AI Job Assistant](https://ai-job-assistant-akpt.onrender.com/)
 
-* Upload a resume in PDF or DOCX format
-* Choose from 20 different job roles
-* Get an ATS score out of 100
-* See the skills found in your resume
-* Identify skills that are missing for the selected role
-* Get 3 project ideas to improve your portfolio
-* Get 10 mock interview questions with sample answers
-* Generate a PDF report of the analysis
+## Features
+
+* Upload resumes in PDF or DOCX format
+* Choose from 20 job roles
+* Generate an ATS score out of 100
+* Identify skills found in the resume
+* Identify skill gaps for the selected role
+* Generate 3 portfolio project ideas
+* Generate 10 mock interview questions with sample answers
+* Generate a PDF analysis report
 * Store previous analyses using SQLite
 
-## How it works
+## How It Works
 
 1. Upload your resume.
-2. Select the role you're preparing for.
-3. The app extracts the text from your resume.
-4. Gemini analyzes the resume based on the selected role.
-5. The results are displayed on the website.
-6. You can generate a PDF report of the results.
+2. Select the role you are preparing for.
+3. The application extracts text from the resume.
+4. Gemini analyzes the resume against the selected role.
+5. The results are displayed in the web application.
+6. A PDF report can be generated from the analysis.
 
 ## Tech Stack
 
@@ -54,10 +55,12 @@ You can upload a PDF or DOCX resume, select a target role, and get an ATS score,
 * CSS
 * JavaScript
 
-**Other**
+**Deployment & Tools**
 
 * Docker
-* Git & GitHub
+* Git
+* GitHub
+* Render
 
 ## Screenshots
 
@@ -86,8 +89,8 @@ You can upload a PDF or DOCX resume, select a target role, and get an ATS score,
 Clone the repository:
 
 ```bash
-git clone https://github.com/neha-7218/ai-job-assistant.git
-cd ai-job-assistant
+git clone https://github.com/neha-7218/ai-job-assistant-clean.git
+cd ai-job-assistant-clean
 ```
 
 Create and activate a virtual environment:
@@ -103,7 +106,7 @@ Install the dependencies:
 pip install -r requirements.txt
 ```
 
-Create a `.env` file and add your Gemini API key:
+Create a `.env` file and add your Gemini API configuration:
 
 ```env
 GEMINI_API_KEY=your-key
@@ -111,7 +114,7 @@ LLM_PROVIDER=gemini
 MODEL=gemini-3.5-flash
 ```
 
-Then start the application:
+Start the application:
 
 ```bash
 python -m uvicorn app.main:app --reload
@@ -125,27 +128,26 @@ http://localhost:8000
 
 ## API Endpoints
 
-| Method | Endpoint       | Purpose                     |
-| ------ | -------------- | --------------------------- |
-| GET    | `/`            | Web application             |
-| GET    | `/api/health`  | Check application/AI status |
-| GET    | `/api/roles`   | Get available job roles     |
-| GET    | `/api/recent`  | Get recent analyses         |
-| POST   | `/api/analyze` | Upload and analyze a resume |
-| POST   | `/api/report`  | Generate the PDF report     |
+| Method | Endpoint       | Purpose                         |
+| ------ | -------------- | ------------------------------- |
+| GET    | `/`            | Web application                 |
+| GET    | `/api/health`  | Check application and AI status |
+| GET    | `/api/roles`   | Get available job roles         |
+| GET    | `/api/recent`  | Get recent analyses             |
+| POST   | `/api/analyze` | Upload and analyze a resume     |
+| POST   | `/api/report`  | Generate the PDF report         |
 
 ## Deployment
 
-The application is Docker-ready and can be deployed as a web service on Render.
+The application is packaged with Docker and deployed as a web service on Render.
 
-### Live Demo
-
-[Try the Live Demo](https://ai-job-assistant-akpt.onrender.com/)
+**Live application:**
+https://ai-job-assistant-akpt.onrender.com/
 
 ## Project Structure
 
 ```text
-ai-job-assistant/
+ai-job-assistant-clean/
 ├── app/
 │   ├── main.py
 │   ├── analyzer.py
@@ -165,16 +167,22 @@ ai-job-assistant/
 └── run.sh
 ```
 
-## A few things I learned from building it
+## What I Learned
 
-This project gave me hands-on experience with FastAPI, working with uploaded files, extracting text from PDFs and DOCX files, integrating an LLM API, handling structured AI responses, storing results in SQLite, and generating PDF reports.
+Building this project gave me hands-on experience with:
 
-I also had to debug things like Python package imports, API quota errors, and PDF text formatting while getting the application running locally and deploying it.
+* FastAPI backend development
+* Resume file uploads and validation
+* PDF and DOCX text extraction
+* LLM API integration
+* Structured AI responses
+* SQLite database operations
+* PDF report generation
+* Docker-based deployment
+* Debugging and deploying a production web application
 
 ## Notes
 
 * Resume uploads are limited to 5 MB.
 * A Gemini API key is required for AI analysis.
-* Avoid uploading resumes or documents containing information you don't want sent to an external AI service.
-
-
+* Avoid uploading resumes or documents containing information you do not want sent to an external AI service.

@@ -166,6 +166,7 @@ ai-job-assistant/
 └── README.md
 
 
+```
 ## What I Learned
 
 Building this project gave me hands-on experience with:

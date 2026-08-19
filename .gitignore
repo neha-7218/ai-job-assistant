@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.cloudrun
+*.db
+.DS_Store
+.pytest_cache/
+venv/

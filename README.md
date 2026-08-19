@@ -159,13 +159,12 @@ ai-job-assistant-clean/
 │   │   ├── client.py
 │   │   └── prompts.py
 │   └── static/
-├── data/
 ├── scripts/
 ├── tests/
 ├── Dockerfile
 ├── requirements.txt
-└── run.sh
-```
+└── README.md
+
 
 ## What I Learned
 
